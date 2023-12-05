@@ -25,3 +25,29 @@
 #container a {
   text-decoration: none;
 }
+
+/* styles.css o styles.scss */
+.custom-image {
+  width: 500px; /* Ajusta el ancho según tus necesidades */
+  height: 280px; /* Ajusta el alto según tus necesidades */
+  /* También puedes usar otras propiedades, como max-width, max-height, etc. */
+}
+
+/* styles.css o styles.scss */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px; /* Ajusta el margen superior según sea necesario */
+}
+
+/* styles.css o styles.scss */
+.center-text {
+  text-align: center;
+}
+
+/* styles.css o styles.scss */
+.justify-text {
+  text-align: justify;
+}
+

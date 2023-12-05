@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>userslist</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button default-href="home"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-grid>
+      <ion-row>
+        <ion-col sizeMd="4" offsetMd="4">
+          <ion-card-content >
+            <ion-list>
+              <ion-item *ngFor="let character of characters" [routerLink]="['/profile/'+character.id]">
+                <ion-thumbnail slot="start">
+                  <img alt="Silhouette of mountains" src="{{ character.image }}" />
+                </ion-thumbnail>
+                <ion-label>{{ character.name }}</ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>
+ 
+
