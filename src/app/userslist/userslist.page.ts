@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { firstValueFrom } from 'rxjs';
+
 
 @Component({
   selector: 'app-userslist',
@@ -16,8 +18,14 @@ export class UserslistPage implements OnInit {
 
   ) { }
 
-  ngOnInit() {
-    this.http.get<any>('https://rickandmortyapi.com/api/character').subscribe(
+   ngOnInit() {
+    this.getUsers();
+  }
+
+  async getUsers() {
+    const user = await firstValueFrom(this.http.get<any>('https://rickandmortyapi.com/api/character'))
+    this.characters=user.results;
+    /*this.http.get<any>('https://rickandmortyapi.com/api/character').subscribe(
       response => {
         this.characters=response.results;
         //console.log(this.characters)
@@ -25,6 +33,6 @@ export class UserslistPage implements OnInit {
       error => {
         console.log(error);
       }
-    );
+    );*/
   }
 }
